@@ -1,0 +1,96 @@
+<!doctype html>
+<html>
+	<head>
+
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="">
+		<meta name="author" content="">
+
+		<title>Perpustakaan</title>
+
+		<link href="<?php echo base_url(); ?>template/backend/sbadmin/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+		<link href="<?php echo base_url(); ?>template/backend/sbadmin/css/datepicker.css" rel="stylesheet">
+		<link href="<?php echo base_url(); ?>template/backend/sbadmin/vendor/bootstrap/css/custom.css" rel="stylesheet">
+		<link href="<?php echo base_url(); ?>template/backend/sbadmin/vendor/metisMenu/metisMenu.min.css" rel="stylesheet">						
+		<link href="<?php echo base_url(); ?>template/backend/sbadmin/vendor/datatables-plugins/dataTables.bootstrap.css" rel="stylesheet">
+		<link href="<?php echo base_url(); ?>template/backend/sbadmin/vendor/datatables-responsive/dataTables.responsive.css" rel="stylesheet">
+		<link href="<?php echo base_url(); ?>template/backend/sbadmin/dist/css/sb-admin-2.css" rel="stylesheet">
+		<link href="<?php echo base_url(); ?>template/backend/sbadmin/vendor/morrisjs/morris.css" rel="stylesheet">
+		<link href="<?php echo base_url(); ?>template/backend/sbadmin/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+	</head>
+	<body>
+		
+		<!-- Static navbar -->
+		<div class="navbar navbar-default">
+			<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<strong><a class="navbar-brand navbar-primary" href="<?php echo site_url('web');?>">DIGIPerpus</a></strong>
+			</div>
+			<div class="navbar-collapse collapse">
+				<ul class="nav navbar-nav">
+					<li class="active"><a href="<?php echo site_url('web');?>"><i class="glyphicon glyphicon-home"></i> Home</a></li>
+					<li><a href="<?php echo site_url('web/anggota');?>"><i class="glyphicon glyphicon-user"></i> Anggota</a></li>
+				</ul>
+				<div class="nav navbar-nav navbar-right">
+					<form class="navbar-form navbar-left" role="search" action="<?php echo site_url('web/cari_buku');?>" method="post">
+						<div class="form-group">
+							<input type="text" name="cari" class="form-control" placeholder="Cari Buku">
+						</div>
+						<button type="submit" class="btn btn-primary"><i class="glyphicon glyphicon-search"></i> Cari</button>
+					</form>
+				</div>
+			</div><!--/.nav-collapse -->
+			</div>
+		</div>
+		
+		
+		<div class="container">
+			<div class="row">
+				<div class="col-md-4">
+					<div class="panel panel-default">
+						<div class="panel-heading">
+							<span class="glyphicon glyphicon-lock"></span> Login
+						</div>
+						<div class="panel-body">
+							<form class="form-horizontal" role="form" action="<?php echo site_url('web/proses');?>" method="post">
+								<?php echo $this->session->flashdata('message');?>
+							<div class="form-group">
+								<label for="inputEmail3" class="col-sm-3 control-label"> Username</label>
+								<div class="col-sm-9">
+									<input type="text" name="username" class="form-control" id="inputEmail3" placeholder="Username" required>
+								</div>
+							</div>
+							<div class="form-group">
+								<label for="inputPassword3" class="col-sm-3 control-label"> Password</label>
+								<div class="col-sm-9">
+									<input type="password" name="password" class="form-control" id="inputPassword3" placeholder="Password" required>
+								</div>
+							</div>
+							<div class="form-group last">
+								<div class="col-sm-offset-3 col-sm-9">
+									<button type="submit" class="btn btn-success btn-sm"> Login</button>
+										<button type="reset" class="btn btn-default btn-sm"> Reset</button>
+								</div>
+							</div>
+							</form>
+						</div>
+						<div class="panel-footer">
+						
+						</div>
+					</div>
+				</div>
+				<div class="col-md-8">
+					<legend>Selamat Datang di Aplikasi Perpustakaan</legend>
+					<img src="<?php echo base_url();?>back.jpg" height="100%" width="100%">
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
